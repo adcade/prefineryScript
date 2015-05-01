@@ -1,0 +1,19 @@
+{
+  "name": "someShit",
+  "type": "someShit",
+  "authors": [
+      {
+          "name": "Sajjad Hossain",
+          "email": "sajjad@withpulp.com"
+      }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "codegyre/robo": "*"
+    },
+
+    "minimum-stability": "dev",
+    "config": {
+            "bin-dir": "bin/"
+        }
+}
