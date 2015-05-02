@@ -7,32 +7,40 @@
 class RoboFile extends \Robo\Tasks
 {
     /**
-     * Asks and obtains $project, $feature, and $shortName. Copies over required scripts, makes directories and touches files
+     * Asks and obtains $intStart and $howMany.
      *
-     * @internal param string $project
-     * @internal param string $feature
-     * @internal param string $robo
+     * @internal param string $intStart
+     * @internal param string $howMany
      */
-    public function curl()
+    public function init()
     {
         /**
          * @var string $project
          */
+        $intStart = $this->ask("What number do you want to start with? [int]");
         $howMany = $this->ask("How many times do you want to run this curl? [int]");
 
         //Replaces items in Run.sh
-        $this->taskReplaceInFile("./Run.sh")
-            ->from('for ((n=0;n<1;n++))')
-            ->to("for ((n=0;n<{$howMany};n++))")
+        $this->taskReplaceInFile("./curlIt.php")
+            ->from('x <= 0')
+            ->to("x <= {$howMany}")
+            ->run();
+
+        //Replaces items in Run.sh
+        $this->taskReplaceInFile("./curlIt.php")
+            ->from('b = 0')
+            ->to("b = {$intStart}")
             ->run();
     }
 
+    /**
+     * Runs curlIt.php
+     */
     public function run()
     {
-        $a = 0;
-        $b = $a++;
-
-        $this->taskExec("curl -H \"Accept: application/json\" -H \"Content-type: application/json\" -X POST -d ' {\"tester\":{\"email\":\"justin+{$b}@prefinery.com\",\"status\":\"applied\",\"profile\":{\"first_name\": \"Justin\", \"last_name\": \"Britten\"},\"responses\":{\"response\":[{\"question_id\":\"23874\", \"answer\":\"a text response\"},{\"question_id\":\"23871\", \"answer\":\"1\"},{\"question_id\":\"23872\", \"answer\":\"0,2\"},{\"question_id\":\"23873\", \"answer\":\"9\"}]}}}' https://account.prefinery.com/api/v2/betas/1/testers.json?api_key=secret")
+        $this->taskExec('php ./curlIt.php')
+            ->printed(true)
             ->run();
     }
+
 }
