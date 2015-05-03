@@ -1,6 +1,8 @@
 #Prefinery Script
 This is a script that curls against a refinery API for `x` times, can be extrapolated to do `a` script for `b` times.
 
+**NOTE** Start with # 100 or the like betauser+(1-100)@adcade.com was used to test the script :)
+
 ###Dependancies
 Try the below 4 steps, ONLY IF if you stumble upon any errors from [Get Started](./#GetStarted). Given you have, try installing and setting up the below dependancies:
 
@@ -41,6 +43,10 @@ Try the below 4 steps, ONLY IF if you stumble upon any errors from [Get Started]
 		
 	This will ask a few questions to update your script.
 	
+	* What's the API Url? (This is the `API URL`)
+	* What number do you want to start with? (For eMail+`X`@domain.com)
+	* How many times do you want to run this curl?
+	
 4. Lastly,
 
 		bin/robo run
@@ -48,3 +54,9 @@ Try the below 4 steps, ONLY IF if you stumble upon any errors from [Get Started]
 	This will run it for the number of time you set it for in the previous command.
 
 
+##Issues
+Currently the script will only work once unless the values are manually reset in `curlIt.php` in lines `4-6` to:
+
+	$y = 0;
+	$b = 0;
+	$url = 'varapi';
