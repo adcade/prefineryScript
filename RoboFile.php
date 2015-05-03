@@ -17,19 +17,28 @@ class RoboFile extends \Robo\Tasks
         /**
          * @var string $project
          */
+
+        $api = $this->ask("What's the API Url? [string]");
         $intStart = $this->ask("What number do you want to start with? [int]");
         $howMany = $this->ask("How many times do you want to run this curl? [int]");
 
-        //Replaces items in Run.sh
+
+        //Replaces API
         $this->taskReplaceInFile("./curlIt.php")
-            ->from('x <= 0')
-            ->to("x <= {$howMany}")
+            ->from('varapi')
+            ->to($api)
             ->run();
 
-        //Replaces items in Run.sh
+        //Replaces START
         $this->taskReplaceInFile("./curlIt.php")
             ->from('b = 0')
             ->to("b = {$intStart}")
+            ->run();
+
+        //Replaces NUMBER OF TIMES
+        $this->taskReplaceInFile("./curlIt.php")
+            ->from('y = 0')
+            ->to("y = {$howMany}")
             ->run();
     }
 
