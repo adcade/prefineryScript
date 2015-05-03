@@ -1,10 +1,10 @@
 #Prefinery Script
 This is a script that curls against a refinery API for `x` times, can be extrapolated to do `a` script for `b` times.
 
-**NOTE** Start with # 100 or the like betauser+(1-100)@adcade.com was used to test the script :)
+**NOTE:** Start with # 100 or above, betauser+(1-100)@adcade.com were used to test the script :)
 
 ###Dependancies
-Try the below 4 steps, ONLY IF if you stumble upon any errors from [Get Started](./#GetStarted). Given you have, try installing and setting up the below dependancies:
+Download the 4 dependancies below **ONLY IF** if you stumble upon any errors from [Get Started](./#GetStarted). Given you have, try installing and setting up the below dependancies:
 
 * [cURL](http://curl.haxx.se/download.html)
 * On Mac, **make sure to** Download or Update [XCode](https://developer.apple.com/xcode/downloads/) & [Developer Tools](http://stackoverflow.com/questions/9329243/xcode-4-4-and-later-install-command-line-tools)
@@ -43,11 +43,11 @@ Try the below 4 steps, ONLY IF if you stumble upon any errors from [Get Started]
 		
 	This will ask a few questions to update your script.
 	
-	* What's the API Url? (This is the `API URL`)
-	* What number do you want to start with? (For eMail+`X`@domain.com)
-	* How many times do you want to run this curl?
+	1. What's the API Url? (Your `API URL`)  
+	2. What number do you want to start with? (For betauser+`X`@adcade.com)  
+	3. How many times do you want to run this curl?  
 	
-4. Lastly,
+4. And lastly,
 
 		bin/robo run
 		
