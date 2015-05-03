@@ -1,10 +1,10 @@
 {
-  "name": "someShit",
-  "type": "someShit",
+  "name": "prefineryScript",
+  "type": "php",
   "authors": [
       {
           "name": "Sajjad Hossain",
-          "email": "sajjad@withpulp.com"
+          "email": "sajjad@adcade.com"
       }
     ],
     "require": {
