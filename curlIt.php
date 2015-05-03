@@ -1,9 +1,9 @@
 <?php
 
 
-$y = 10;
-$b = 10;
-$url = 'https://adcade.prefinery.com/api/v2/betas/5685/testers.json?api_key=ez5xntm7ZJpKd31Zd5qC';
+$y = 0;
+$b = 0;
+$url = 'varapi';
 
 for ($x = 0; $x <= $y; $x++) {
     ++$b;
